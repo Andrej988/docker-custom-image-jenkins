@@ -1,4 +1,4 @@
-# Docker image for customized Jenkins
+# Customized Jenkins (Docker image)
 
 ## Added tools:
 - Docker (inside Jenkins container)
