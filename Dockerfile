@@ -1,4 +1,4 @@
-FROM jenkins/jenkins:2.380-jdk17
+FROM jenkins/jenkins:2.393-jdk17
 
 # switching to root user for installation of additional apps
 USER root
