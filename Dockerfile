@@ -1,4 +1,4 @@
-FROM jenkins/jenkins:2.393-jdk17
+FROM jenkins/jenkins:2.396-jdk17
 
 # switching to root user for installation of additional apps
 USER root
@@ -40,5 +40,12 @@ RUN curl https://dl.influxdata.com/influxdb/releases/influxdb2-client-2.5.0-linu
 RUN tar xvzf /tmp/influx-cli/influxdb2-client.tar.gz -C /tmp/influx-cli/extract/
 RUN cp /tmp/influx-cli/extract/influxdb2-client-2.5.0-linux-amd64/influx /usr/local/bin/
 # INSTALLATION OF INFLUX CLI END
+
+# INSTALLATION OF LIQUIBASE CLI START
+RUN mkdir -p /tmp/liquibase/extract/
+RUN curl https://github.com/liquibase/liquibase/releases/latest/download/liquibase-4.20.0.tar.gz -L -o /tmp/liquibase/liquibase.tar.gz
+RUN tar xvzf /tmp/liquibase/liquibase.tar.gz -C /tmp/liquibase/extract/
+RUN ln -s /tmp/liquibase/extract/liquibase /usr/bin/liquibase
+# INSTALLATION OF LIQUIBASE CLI END
 
 RUN usermod -aG docker jenkins
