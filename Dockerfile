@@ -111,7 +111,7 @@ RUN echo "deb http://ppa.launchpad.net/ansible/ansible/ubuntu trusty main" >> /e
 
 #==========================================================================================================================================
 # Can be used to:
-# - Update the username and password (NOT IN USE AT THE MOMENT)
+# - Update the username and password
 # - Save id_rsa.pub file to /root/.ssh/
 # - Allows to skip Jenkins setup wizard
 # - Creating default admin user (Jenkins runs all grovy files from init.groovy.d dir)
@@ -138,9 +138,9 @@ RUN usermod -aG docker jenkins
 
 
 #==========================================================================================================================================
-# Switching to user jenkins
+# Switching to user jenkins (NOT USED AT THE MOMENT)
 #==========================================================================================================================================
-USER jenkins
+#USER jenkins
 #==========================================================================================================================================
 
 
