@@ -1,6 +1,6 @@
-FROM jenkins/jenkins:2.445-jdk17
+FROM jenkins/jenkins:2.450-jdk17
 
-MAINTAINER Andrej988
+LABEL maintainer="Andrej988"
 
 # switching to root user for installation of additional apps
 USER root
@@ -59,7 +59,7 @@ RUN apt-get install -qqy rsync sshpass
 #==========================================================================================================================================
 RUN curl https://www.postgresql.org/media/keys/ACCC4CF8.asc | gpg --dearmor | tee /etc/apt/trusted.gpg.d/apt.postgresql.org.gpg >/dev/null
 RUN echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list
-RUN apt-get update && apt-get install -qqy postgresql-client-15
+RUN apt-get update && apt-get install -qqy postgresql-client-16
 #==========================================================================================================================================
 
 
