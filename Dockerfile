@@ -1,4 +1,4 @@
-FROM jenkins/jenkins:2.450-jdk17
+FROM jenkins/jenkins:2.501-jdk21
 
 LABEL maintainer="Andrej988"
 
